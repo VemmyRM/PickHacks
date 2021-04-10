@@ -24,7 +24,7 @@ const MovieSelect = () => {
             style={{ color: "red" }}
             onClick={movieNo}
           >
-            <i class="fas fa-thumbs-down fa-10x"></i>
+            <i class="fas fa-thumbs-down fa-10x" />
           </div>
         </div>
         <div className="col-8">
