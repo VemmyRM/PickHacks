@@ -1,9 +1,21 @@
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
+import firebase from "firebase";
 
 const Options = ({ phrase }) => {
   const [groupId, setId] = useState();
 
+<<<<<<< HEAD
+=======
+  var database = firebase.database();
+
+  function addIdToDatabase(){
+    setId(uuidv4());
+    database.ref("id/" + groupId).set({
+      id: groupId,
+    });
+  }
+>>>>>>> c8443f4ec26c3afdbe9657c9d2ac5123c0c98917
   return (
     <div>
       <button
@@ -121,7 +133,7 @@ const Options = ({ phrase }) => {
                     <button
                       className="btn btn-outline-secondary"
                       type="button"
-                      onClick={() => setId(uuidv4())}
+                      onClick={() => addIdToDatabase()}
                     >
                       Get Link!
                     </button>
