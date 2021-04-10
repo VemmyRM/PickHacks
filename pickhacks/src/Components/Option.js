@@ -6,21 +6,14 @@ const Options = ({ phrase }) => {
   const [groupId, setId] = useState(0);
   var database = firebase.database();
 
-<<<<<<< HEAD
   function addIdToDatabase() {
-    setId(uuidv4());
-    database.ref("id/" + groupId).set({
-      id: groupId,
-=======
-  function addIdToDatabase(){
     var random = uuidv4();
     setId(random);
     database.ref("id/" + random).set({
       id: random,
->>>>>>> 79ebba34a936adf6c772aa309b6a467079838a5e
     });
   }
-  
+
   return (
     <div>
       <button

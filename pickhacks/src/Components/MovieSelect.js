@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Movie from "./Movie";
 
-const MovieSelect = () => {
+const MovieSelect = ({ params }) => {
   const [name, setName] = useState("Ptk");
 
   function movieYes() {
     //add movie name to database (from state?)
     //next movie
     console.log("I liked this movie");
+    console.log(params.id);
   }
 
   //   const [movieInfo, setMovie] = useState();
@@ -19,6 +20,49 @@ const MovieSelect = () => {
 
   return (
     <div className="">
+      <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div className="form-group">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="name"
+                  id="Prime Video"
+                />
+                <label className="form-control-label" for="name">
+                  What's your name?
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="row align-items-center">
         <div className="col-2">
           <div
