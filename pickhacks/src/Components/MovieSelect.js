@@ -3,12 +3,14 @@ import Movie from "./Movie";
 import firebase from "firebase";
 
 const MovieSelect = (props) => {
-  const [name, setName] = useState("Ptk");
+  const [name, setName] = useState("");
   const [movie, setMovie] = useState({
     name: "Justice League",
     url: "https://m.media-amazon.com/images/M/MV5BYjI3NDg0ZTEtMDEwYS00YWMyLThjYjktMTNlM2NmYjc1OGRiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
   });
   const [currentNumber, setCurrentNumber] =useState(0);
+  const [arrayOfLikedMovies, setArrayOfLikedMovies] =useState({
+  });
 
   var database = firebase.database();
 
@@ -21,15 +23,33 @@ const MovieSelect = (props) => {
     var currentId = props.match.params.id;
     database.ref(`id/${currentId}/${name}`).set({
     });
+    var tempArray = arrayOfLikedMovies;
+    tempArray[currentNumber] = movie.name;
+    
+    setArrayOfLikedMovies(tempArray);
+    console.log(arrayOfLikedMovies);
+    //database.ref(`id/${currentId}/${name}/movies/`).set(movie);
+ 
+    // database.ref(`id/${currentId}/${name}/movies/`).once('value').then(function(snapshot) {
+    //     snapshot.child('movie').ref.push(movie);
 
-    var postListRef = database.ref(`id/${currentId}/${name}/movies`);
-    var newPostRef = postListRef.push();
-    newPostRef.set(movie);
-
+    // });
+    var currentPath = `id/${currentId}/${name}`;
     setCurrentNumber(currentNumber+1);
+   
+    if(currentNumber===9){
+      addLikedMovies(currentPath);
+    }
     nextMovie();
   }
 
+  function addLikedMovies(currentPath){
+  
+    database.ref(`${currentPath}/movies`).push(arrayOfLikedMovies);
+    //database.ref(`${currentPath}/movies/`).set(arrayOfLikedMovies);
+    // arrayOfLikedMovies.forEach(element =>
+    //     database.ref(`${currentPath}/movies/`).set(element));
+  }
   function nextMovie() {
     var getMoviesRef = firebase.database().ref(`movies/${currentNumber}`);
     getMoviesRef.on('value', (snapshot) => {
