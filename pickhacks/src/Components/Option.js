@@ -7,7 +7,7 @@ const Options = ({ phrase }) => {
 
   var database = firebase.database();
 
-  function addIdToDatabase(){
+  function addIdToDatabase() {
     setId(uuidv4());
     database.ref("id/" + groupId).set({
       id: groupId,
