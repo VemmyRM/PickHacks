@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 const Options = ({ phrase }) => {
   const [groupId, setId] = useState();
+
   return (
     <div>
       <button
