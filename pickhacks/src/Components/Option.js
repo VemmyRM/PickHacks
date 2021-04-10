@@ -1,4 +1,4 @@
-const Options = ({ phrase, handleClick }) => {
+const Options = ({ phrase }) => {
   return (
     <div>
       <button
