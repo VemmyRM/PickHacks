@@ -1,12 +1,15 @@
+import logo from "./logo.svg";
 import "./App.css";
 import Options from "./Components/Option";
 import firebase from "firebase";
+import { v4 as uuidv4 } from "uuid";
+
 import React, { useState } from "react";
+import MovieSelect from "./Components/MovieSelect";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function AppCopy() {
-  const firebaseApp = firebase.apps[0];
-  var database = firebase.database();
-
+  
   function handleFriends(name, email) {
     console.log("you picked friends");
     database.ref("users/" + name).set({
@@ -14,6 +17,9 @@ function AppCopy() {
       email: email,
     });
   }
+
+  const firebaseApp = firebase.apps[0];
+  var database = firebase.database();
 
   var postListRef = database.ref("movies");
   var newPostRef = postListRef.push();

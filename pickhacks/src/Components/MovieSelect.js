@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Movie from "./Movie";
 
 const MovieSelect = () => {
+  const [name, setName] = useState("Ptk");
+
   function movieYes() {
     //add movie name to database (from state?)
     //next movie
