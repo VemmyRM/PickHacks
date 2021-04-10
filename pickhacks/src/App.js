@@ -15,6 +15,27 @@ function App() {
   const firebaseApp = firebase.apps[0];
   var database = firebase.database();
 
+  var postListRef = database.ref('movies');
+  var newPostRef = postListRef.push();
+  var array = (
+  {
+    movie: "Zack Snyder's Justice League",
+    genre: "Action",
+    service: "Hulu",
+    image: "https://m.media-amazon.com/images/M/MV5BYjI3NDg0ZTEtMDEwYS00YWMyLThjYjktMTNlM2NmYjc1OGRiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
+  },
+  {
+    movie: "Shawshank Redemption",
+    genre: "Adevnture",
+    service: "Netflix",
+    image: "https://m.media-amazon.com/images/M/MV5BYjI3NDg0ZTEtMDEwYS00YWMyLThjYjktMTNlM2NmYjc1OGRiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg"
+  });
+
+  array.forEach(element => {
+    newPostRef.set(element);
+  });
+  
+
   var username = "PTK";
   var email = "ptk@gmail.com";
   function handleAlone() {
@@ -32,7 +53,8 @@ function App() {
             />
           </div>
           <div className="col">
-            <Options phrase="Find me a Movie Buddy" handleClick={handleAlone} />
+            <Options phrase="Find me a Movie Buddy" handleClick={handleAlone}/>
+            
           </div>
         </div>
       </div>
