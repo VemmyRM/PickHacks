@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+.option {
+  height: 400px;
+  width: 400px;
+  border: 5px solid black;
+  align-content: center;
+  vertical-align: middle;
+  display: grid;
+}
+
+.option h1 {
+  vertical-align: middle;
+}
+
+.option:hover {
+  cursor: pointer;
+  border: 5px solid blueviolet;
+  color: white;
+  background-color: black;
+}
+
+.title {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
