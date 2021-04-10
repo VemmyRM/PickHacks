@@ -1,4 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+import React, { useState } from "react";
+
 const Options = ({ phrase }) => {
+  const [groupId, setId] = useState();
   return (
     <div>
       <button
@@ -113,14 +117,21 @@ const Options = ({ phrase }) => {
                 </div>
                 <div className="input-group mb-3">
                   <div className="input-group-prepend">
-                    <button className="btn btn-outline-secondary" type="button">
-                      Generate Link!
+                    <button
+                      className="btn btn-outline-secondary"
+                      type="button"
+                      onClick={() => setId(uuidv4())}
+                    >
+                      Get Link!
                     </button>
                   </div>
                   <input
                     type="text"
                     className="form-control"
                     id="watcher-name"
+                    value={
+                      groupId ? `http://localhost:3000/movies/${groupId}` : ""
+                    }
                   />
                 </div>
               </form>
@@ -131,7 +142,7 @@ const Options = ({ phrase }) => {
                 className="btn btn-secondary"
                 data-dismiss="modal"
               >
-                Start
+                Close
               </button>
             </div>
           </div>

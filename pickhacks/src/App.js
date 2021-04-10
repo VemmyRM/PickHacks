@@ -1,10 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Options from "./Components/Option";
-import Modal from "./Components/Modal";
 import firebase from "firebase";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
+import MovieSelect from "./Components/MovieSelect";
 
 function App() {
   function handleFriends(name, email) {
@@ -47,6 +47,7 @@ function App() {
   }
   return (
     <div className="App">
+      <MovieSelect />
       <div className="container">
         <h1 className="title">Welcome to THE APP. Pick your experience. </h1>
         <div className="row">

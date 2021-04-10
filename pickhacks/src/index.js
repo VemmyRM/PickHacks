@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import firebase from "firebase/app";
 
 var firebaseConfig = {
@@ -12,7 +12,7 @@ var firebaseConfig = {
   storageBucket: "pickhacks-91a97.appspot.com",
   messagingSenderId: "653766672377",
   appId: "1:653766672377:web:256092378407cb062c0728",
-  measurementId: "G-570D6CWLD8"
+  measurementId: "G-570D6CWLD8",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -22,7 +22,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
