@@ -5,8 +5,6 @@ import firebase from "firebase";
 const Options = ({ phrase }) => {
   const [groupId, setId] = useState();
 
-<<<<<<< HEAD
-=======
   var database = firebase.database();
 
   function addIdToDatabase(){
@@ -15,7 +13,6 @@ const Options = ({ phrase }) => {
       id: groupId,
     });
   }
->>>>>>> c8443f4ec26c3afdbe9657c9d2ac5123c0c98917
   return (
     <div>
       <button
