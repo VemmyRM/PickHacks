@@ -10,10 +10,9 @@ const Options = ({ phrase }) => {
     var random = uuidv4();
     setId(random);
     database.ref("id/" + random).set({
-      id: random,
     });
   }
-
+   
   return (
     <div>
       <button
