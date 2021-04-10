@@ -3,16 +3,17 @@ import React, { useState } from "react";
 import firebase from "firebase";
 
 const Options = ({ phrase }) => {
-  const [groupId, setId] = useState();
-
+  const [groupId, setId] = useState(0);
   var database = firebase.database();
 
   function addIdToDatabase(){
-    setId(uuidv4());
-    database.ref("id/" + groupId).set({
-      id: groupId,
+    var random = uuidv4();
+    setId(random);
+    database.ref("id/" + random).set({
+      id: random,
     });
   }
+  
   return (
     <div>
       <button
@@ -49,7 +50,7 @@ const Options = ({ phrase }) => {
             </div>
             <div className="modal-body">
               <form>
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label for="watcher-name" className="col-form-label">
                     What's your name?
                   </label>
@@ -58,7 +59,7 @@ const Options = ({ phrase }) => {
                     className="form-control"
                     id="watcher-name"
                   />
-                </div>
+                </div> */}
 
                 <div className="form-group">
                   <p>Which steaming services do you have?</p>
