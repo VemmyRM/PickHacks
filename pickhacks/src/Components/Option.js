@@ -49,17 +49,6 @@ const Options = ({ phrase }) => {
             </div>
             <div className="modal-body">
               <form>
-                {/* <div className="form-group">
-                  <label for="watcher-name" className="col-form-label">
-                    What's your name?
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="watcher-name"
-                  />
-                </div> */}
-
                 <div className="form-group">
                   <p>Which steaming services do you have?</p>
                   <div className="form-check form-check-inline">
@@ -130,8 +119,7 @@ const Options = ({ phrase }) => {
                     <button
                       className="btn btn-outline-secondary"
                       type="button"
-                      onClick={() => addIdToDatabase()}
-                    >
+                      onClick={() => addIdToDatabase()}>
                       Get Link!
                     </button>
                   </div>
@@ -150,8 +138,7 @@ const Options = ({ phrase }) => {
               <button
                 type="button"
                 className="btn btn-secondary"
-                data-dismiss="modal"
-              >
+                data-dismiss="modal" >
                 Close
               </button>
             </div>
