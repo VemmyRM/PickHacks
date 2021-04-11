@@ -33,12 +33,13 @@ const Options = ({ phrase }) => {
         aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-centered" role="document">
-          <div className="modal-content">
+        <div className="modal-dialog modal-dialog-centered" role="document" >
+          <div className="modal-content" style={{background: "white"}}>
             <div className="modal-header">
+              <center>
               <h5 className="modal-title" id="exampleModalCenterTitle">
-                Modal title
-              </h5>
+                Tell us a little bit more!
+              </h5></center>
               <button
                 type="button"
                 className="close"
@@ -50,15 +51,16 @@ const Options = ({ phrase }) => {
             </div>
             <div className="modal-body">
               <form>
-                <div className="form-group">
+                <div className="form-group" style={{paddingBottom: "20px"}}>
                   <p>Which steaming services do you have?</p>
-                  <div className="form-check form-check-inline">
+                  <div className="form-check form-check-inline" >
                     <input
                       className="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
                       id="Netflix"
                       value="Netflix"
+                      
                     />
                     <label className="form-check-label" for="Netflix">
                       Netflix
@@ -101,7 +103,7 @@ const Options = ({ phrase }) => {
                     </label>
                   </div>
                 </div>
-                <div className="form-group">
+                <div className="form-group" style={{paddingBottom: "20px"}}>
                   <label for="genreSelect">
                     Which genres are you interested in?
                   </label>
@@ -116,11 +118,11 @@ const Options = ({ phrase }) => {
                   </select>
                 </div>
                 <div className="input-group mb-3">
-                  <div className="input-group-prepend">
+                  <div className="input-group-prepend" style={{paddingBottom: "20px"}}>
                     <button
                       className="btn btn-outline-secondary"
                       type="button"
-                      onClick={() => addIdToDatabase()}>
+                      onClick={() => addIdToDatabase()} >
                       Get Link!
                     </button>
                   </div>
@@ -135,14 +137,15 @@ const Options = ({ phrase }) => {
                 </div>
               </form>
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer"  >
               <button
                 type="button"
                 className="btn btn-secondary"
-                data-dismiss="modal" >
+                data-dismiss="modal"
+                style={{background: "linear-gradient(81deg, rgba(2,0,36,1) 0%, rgba(196,50,194,0.7805497198879552) 0%, rgba(0,174,255,1) 96%)", marginRight:"300px"}} >
                 Close
               </button>
-             <Link className="btn btn-primary" to= {`/movies/${groupId}`} >Click to login</Link>
+             <Link className="btn btn-primary" to= {`movies/${groupId}`} style={{background: "linear-gradient(81deg, rgba(2,0,36,1) 0%, rgba(196,50,194,0.7805497198879552) 0%, rgba(0,174,255,1) 96%)"}}>Continue</Link>
             </div>
           </div>
         </div>
