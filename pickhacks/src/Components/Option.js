@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
 import firebase from "firebase";
+import {Link} from 'react-router-dom';
 
 const Options = ({ phrase }) => {
   const [groupId, setId] = useState(0);
@@ -141,6 +142,7 @@ const Options = ({ phrase }) => {
                 data-dismiss="modal" >
                 Close
               </button>
+             <Link className="btn btn-primary" to= {`/movies/${groupId}`} >Click to login</Link>
             </div>
           </div>
         </div>
