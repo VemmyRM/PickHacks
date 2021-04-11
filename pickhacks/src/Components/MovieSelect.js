@@ -109,38 +109,44 @@ return (
 check?<DisplayMatch match={matches} /> : 
 
     <div className="">
-      <div className="form-group">
-        <label className="form-control-label" for="name">
+      <div className="form-group"   style={{paddingTop:"40px"}}> 
+       <center> 
+         {/* <label className="form-control-label" for="name">
           What's your name?
-          </label>
+          </label> */}
         <input
           className="form-control"
           type="text"
           name="name"
           id="Prime Video"
           onChange={setUserName}
-        />
+          style={{backgroundColor:"transparent",  borderColor:"black", width:"500px", paddingBottom:"20px", color:"black"}}
+          placeholder="What's your name?"
+         
+        /></center>
       </div>
       <div className="row align-items-center">
-        <div className="col-2">
+        <div className="col-3">
           <div
             className="movieReaction"
-            style={{ color: "red" }}
+            style={{ color: "rgba(196,50,194,0.7805497198879552)", paddingLeft:"150px",}}
             onClick={nextMovie}
           >
             <i className="fas fa-thumbs-down fa-10x" />
           </div>
         </div>
-        <div className="col-8">
+        <div className="col-6">
+          <center>
           <Movie
             name={movie.name}
             image={movie.url}
           />
+          </center>
         </div>
-        <div className="col-2">
+        <div className="col-3">
           <div
             className="movieReaction"
-            style={{ color: "green" }}
+            style={{ color: "rgba(0,145,255,1)", paddingRight:"50000px"}}
             onClick={movieYes}
           >
             <i class="fas fa-thumbs-up fa-10x"></i>
